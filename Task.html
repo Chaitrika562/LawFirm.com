@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="icon" href="./Images/favicon.jpg" />
+    <link rel="stylesheet" href="./taskstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <title>Shiny Law Firm</title>
+</head>
+
+<body>
+    <div class="contact-info d-flex text-bg-light justify-content-sm-around justify-content-end flex-row me-3 me-sm-0">
+        <div class="d-lg-flex flex-row d-none">
+            <div class="email-info px-2 py-1">
+                <i class="fa-solid fa-envelope"></i>
+                shiny@gmail.com
+            </div>
+            <div class="phone-info px-2 py-1">
+                <i class="fa-solid fa-phone"></i>
+                0001-0002-0003
+            </div>
+        </div>
+        <div>
+            <i class="fa-brands fa-facebook-f fs-6 p-1 text-body-secondary"></i>
+            <i class="fa-brands fa-twitter fs-6 p-1 text-body-secondary"></i>
+            <i class="fa-brands fa-google-plus-g fs-6 p-1 text-body-secondary"></i>
+            <i class="fa-brands fa-linkedin-in fs-6 p-1 text-body-secondary"></i>
+            <i class="fa-brands fa-instagram fs-6 p-1 text-body-secondary"></i>
+            <i class="fa-solid fa-basketball fs-6 p-1 text-body-secondary"></i>
+        </div>
+    </div>
+
+    <header class="sticky-top pen-nav">
+        <div class="search-box bg-dark p-3">
+            <div class="container">
+                <i class="fa-solid fa-magnifying-glass text-white mx-3"></i>
+                <input type="search" class="search-text bg-dark text-white rounded-pill p-2 w-75" placeholder="Search">
+                <i onclick="removesearch()" class="fa-solid fa-xmark close-search text-white mx-5"></i>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container navigation col-12 col-sm-12 flex-lg-row flex-row-reverse">
+                <a class="navbar-brand me-auto me-lg-0" href="#">
+                    <img src="./Images/law-logo.png" class="law-logo p-2 ms-lg-2 ms-5 m-sm-0 p-sm-0" alt="law" />
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span><i class="fa-solid fa-bars"></i></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-lg-end ms-lg-5 flex-lg-grow-0" id="navbarNav">
+                    <ul class=" col-12 col-lg-12 list-group float-lg-end float-start list-group-horizontal-lg list-unstyled">
+                        <li class="nav-li">
+                            <a href="#" class="menu-content">Home</a>
+                        </li>
+
+                        <li class="nav-li">
+                            <a href="#about" class="menu-content">About</a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="#practice" class="menu-content">Practice Area</a>
+                        </li>
+
+                        <li class="nav-li">
+                            <a href="#attorneys" class="menu-content">Attorneys</a>
+                        </li>
+
+                        <li class="nav-li">
+                            <a href="#whyUs" class="menu-content">WhyUs</a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="#news" class="menu-content">News</a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="#reviews" class="menu-content">Testimonial</a>
+                        </li>
+                        <li class="nav-li">
+                            <a href="#map" class="menu-content">contact</a>
+                        </li>
+                        <li class="menu-content d-none d-lg-block">
+                            <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="search">
+                <li class="menu-content d-inline-block d-sm-block d-lg-none py-0">
+                    <i onclick="displaySearch()" class="fa-solid fa-magnifying-glass"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <div id="carouselExample" class="carousel slide mt-auto pb-4" data-bs-wrap="true" data-bs-ride="carousel"
+        data-bs-interval="4000"> -->
+        <div id="carouselExample" class="carousel slide mt-auto pb-4">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        </div>
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Images/Banner-1.jpg" class="d-block col-lg-12 car-img" alt="...">
+                    <div class="carousel-caption d-md-block car-2">
+                        <h5 class="col-lg-6 car-head2 fw-lighter animate__animated animate__fadeInDown">We Create</h5>
+                        <p class="car-con2 animate__animated animate__fadeInDown">Awesome Stuff</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./Images/Banner-2.jpg" class="d-block col-lg-12 car-img" alt="...">
+                    <div class="carousel-caption d-md-block col-lg-3 car-1">
+                        <h5 class="car-head1" >theLaw</h5>
+                        <p class="car-con1">We Fight for you</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev d-none d-lg-block" type="button"
+                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next d-none d-lg-block" type="button"
+                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="py-5">
+        <div class="container">
+            <div id="about" class="row m-lg-5 justify-content-lg-center flex-sm-nowrap">
+                <div class="col-lg-6 col-sm-6 p-sm-0">
+                    <img src="./Images/HomePage.png" alt="homepage" class="col-12" />
+                </div>
+
+                <div class="home-contents col-lg-6 col-sm-6 my-3">
+                    <div class="homepage row flex-lg-row d-lg-flex flex-lg-wrap flex-nowrap justify-content-lg-around">
+                        <div class="col-lg-1 font-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="home-cont col-10">
+                            <h5 class="text-capitalize fw-normal">Well Planners</h5>
+                            <p class="home-text text-left">Phasellus ut condimentum diam, eget tempus lorem. Morbi
+                                bibendum est quis arcu posuere
+                                condimentum. Nullam justo eros, pellentesque a metus non, mattis.</p>
+                        </div>
+                    </div>
+                    <div class="homepage row flex-lg-row d-lg-flex flex-lg-wrap flex-nowrap justify-content-lg-around">
+                        <div class="col-lg-1 font-icon">
+                            <i class="fa-solid fa-eye-low-vision"></i>
+                        </div>
+                        <div class="home-cont col-10">
+                            <h5 class="text-capitalize fw-normal">Settlement</h5>
+                            <p class="home-text text-left">Phasellus ut condimentum diam, eget tempus lorem. Morbi
+                                bibendum est quis arcu posuere
+                                condimentum. Nullam justo eros, pellentesque a metus non, mattis.</p>
+                        </div>
+                    </div>
+                    <div class="homepage row flex-lg-row d-lg-flex flex-lg-wrap flex-nowrap justify-content-lg-around">
+                        <div class="col-lg-1 font-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <div class="home-cont col-10">
+                            <h5 class="text-capitalize fw-normal">Fight for Justice</h5>
+                            <p class="home-text text-left">Phasellus ut condimentum diam, eget tempus lorem. Morbi
+                                bibendum est quis arcu posuere
+                                condimentum. Nullam justo eros, pellentesque a metus non, mattis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row flex-sm-nowrap flex-wrap my-3">
+                <h4 class="welcome-head text-sm-end ms-lg-5 text-start col-lg-3 col-sm-3 col-5 fs-1 fw-normal">Welcome to
+                    theLaw</h4>
+                <div class="col-lg-9">
+                <p class="linev pt-2">Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed,
+                    nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis drerit fringilla.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis
+                    mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="welcome text-light row p-lg-3 p-0 pt-5">
+        <div class="col-lg-7 col-sm-6">
+            <h4 class="text-lg-end text-start"><span class="fw-bold">the Law firm</span> Offers A Range of Marketing
+                Communications Services</h4>
+            <p class="text-lg-center text-start pe-3">Similique sunt in culpa qui officia deserunt mollitia animi.</p>
+        </div>
+        <div class="col-lg-3 ms-lg-5 d-flex align-items-center">
+            <button type="button" class="btn connect fw-lighter border-white fs-4 text-uppercase text-dark mb-3">connect</button>
+        </div>
+    </div>
+    <div id="practice">
+        <h2 class="heading">Practice Areas</h2>
+        <div class="container mb-3">
+            <div class="row my-lg-3 justify-content-lg-center justify-content-sm-center">
+                <div class="col-lg-3 col-sm-3 col-12 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Property law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Protecting Your Property, Protecting Your Future.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-12 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                     <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Security Law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Ensuring Compliance, Securing Your Investments.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-12 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                       <i class="fa-regular fa-floppy-disk"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Corporate law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Building Strong Legal Foundations for Your Business.</p>
+                </div>
+            </div>
+            <div class="row my-lg-3 justify-content-lg-center justify-content-sm-center">
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-handcuffs"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Criminal Defense</h5>
+                    </a>
+                    <p class="fs-6 text-left">Defending Your Rights, One Case at a Time.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Finance Law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Guiding You Through Financial Regulations with Confidence.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Family law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Resolving Family Matters with Care and Understanding.</p>
+                </div>
+            </div>
+            <div class="row my-lg-3 justify-content-lg-center justify-content-sm-center">
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-car-burst"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">car crash law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Helping You Recover After Car Accidents, Both Legally and Financially.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Medical law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Protecting Your Health, Both Physically and Legally.</p>
+                </div>
+                <div class="col-lg-3 col-sm-3 prac">
+                    <div class="prac-icon align-middle float-start my-lg-4 me-lg-3 me-3">
+                        <i class="fa-solid fa-person-digging"></i>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <h5 class="prac-text fs-3 fw-lighter text-left text-dark">Labor Law</h5>
+                    </a>
+                    <p class="fs-6 text-left">Fighting for Workers Rights with Dedication.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="consultation">
+        <div class="container">
+            <div class="text-light row p-lg-5 px-0 py-5">
+                <div class="col-lg-5">
+                    <p class="call">We call you back</p>
+                    <h2 class="fw-normal text-capitalize col-lg-12 col-8">Request a free consulation</h2>
+                    <p class="skill-test fw-lighter text-light-subtle">Our team is composed of senior-level publinec relations
+                        consultants with editorial and creative
+                        skills that
+                        have been built over years of delivering PR services to top businesses.</p>
+                </div>
+                <form class="col-lg-7 row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="name" class="text-capitalize form-label">your name</label>
+                            <input id="name" type="text" placeholder="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text-capitalize form-label">Email address</label>
+                            <input id="email" type="email" placeholder="name@gmail.com" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="phone" class="text-capitalize form-label">your phone</label>
+                            <input id="phone" type="tel" placeholder="phone Number" class="form-control">
+                            <button type="submit" class="submit-btn btn col-12">Submit a request</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="teams m-4" id="attorneys">
+        <div class="texts">
+            <span class="call text-uppercase">Our main team</span>
+            <h3>Meet our attorneys</h3>
+            <div class="d-lg-flex justify-content-lg-between w-75 pe-lg-5">
+                <p class="border-design home-text fs-6 p-3">Trusted Advocates, Leading You Through Every Legal
+                    Challenge.</p>
+                <div>
+                    <button type="button" class="contact-btn">Contact Us</button>
+                </div>
+            </div>
+        </div>
+        <div class="att row d-lg-flex gap-lg-5 justify-content-lg-center mb-5">
+            <div class="card col-lg-2 col-12 team-card position-relative">
+                <img src="./Images/contact-1.jpg" class="card-img-top image" alt="team1">
+                <div class="position-absolute social-icon">
+                    <ul class="social-media col-lg-0 list-unstyled d-none">
+                        <li><i class="fa-brands fa-facebook-f p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-twitter p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-google-plus-g p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-linkedin-in p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-instagram p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-solid fa-basketball p-3 fs-5 text-white"></i></li>
+                    </ul>
+                </div>
+                <div class="card-body card-content">
+                    <h5 class="card-title text-center">Rowland Greg Mojenskyi</h5>
+                    <p class="card-text text-center">Bar President / Criminal Lawyer</p>
+                </div>
+            </div>
+            <div class="card col-lg-2 col-12 team-card position-relative">
+                <img src="./Images/contact-2.jpg" class="card-img-top image" alt="team2">
+                <div class="position-absolute social-icon">
+                    <ul class="social-media list-unstyled d-none">
+                        <li><i class="fa-brands fa-facebook-f p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-twitter p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-google-plus-g p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-linkedin-in p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-instagram p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-solid fa-basketball p-3 fs-5 text-white"></i></li>
+                    </ul>
+                </div>
+                <div class="card-body card-content">
+                    <h5 class="card-title text-center">Denton Aaron Incerman</h5>
+                    <p class="card-text text-center">Associate / Family Lawyer</p>
+                </div>
+            </div>
+            <div class="card col-lg-2 col-12 team-card position-relative">
+                <img src="./Images/contact-3.jpg" class="card-img-top image" alt="team3">
+                <div class="position-absolute social-icon">
+                    <ul class="social-media list-unstyled d-none">
+                        <li><i class="fa-brands fa-facebook-f p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-twitter p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-google-plus-g p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-linkedin-in p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-brands fa-instagram p-3 fs-5 text-white"></i></li>
+                        <li><i class="fa-solid fa-basketball p-3 fs-5 text-white"></i></li>
+                    </ul>
+                </div>
+                <div class="card-body card-content">
+                    <h5 class="card-title text-center">Hazzy Wilbur Conaway</h5>
+                    <p class="card-text text-center">Criminal / Criminal Defence Lawyer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-sm-row flex-column row whyUs bg-body-tertiary" id="whyUs">
+        <div class="col-sm-6 col-12 ps-lg-0">
+            <img src="./Images/whyus.jpg" alt="why-us" class="col-12">
+        </div>
+        <div class="col-sm-6 col-12 p-4 py-5">
+            <span class="call text-uppercase">Few Words</span>
+            <h3>Why Choose the Law firm</h3>
+            <p class="home-text border-design py-3 ps-3 my-3">Proven Results, Unwavering Commitment. Expert Legal
+                Guidance with a Personal Touch.</p>
+            <div class="reason d-flex align-items-lg-baseline align-items-start my-4 position-relative">
+                <div class="reason-icon mt-lg-3">
+                    <i class="fa-solid fa-person"></i>
+                </div>
+                <div>
+                    <h4 class="reason-head text-capitalize fw-normal ps-4">We have best attorneys team</h4>
+                    <p class="home-text col-lg-9 my-lg-3 ps-4">Our law firm boasts a team of top-tier attorneys with a
+                        wealth of experience and a proven
+                        track record of success. We are committed to delivering exceptional legal services tailored
+                        to your unique needs.</p>
+                </div>
+            </div>
+            <div class="reason d-flex align-items-lg-baseline align-items-start my-4 position-relative">
+                <div class="reason-icon mt-lg-3">
+                    <i class="fa-solid fa-database"></i>
+                </div>
+                <div>
+                    <h4 class="reason-head text-capitalize fw-normal ps-4">Best case strategy</h4>
+                    <p class="home-text col-lg-9 my-lg-3 ps-4">Our approach combines thorough analysis and innovative
+                        thinking to develop the most effective
+                        strategies for winning your case.</p>
+                </div>
+            </div>
+            <div class="reason d-flex  align-items-lg-baseline align-items-start my-4 position-relative">
+                <div class="reason-icon mt-lg-3">
+                    <i class="fa-solid fa-map"></i>
+                </div>
+                <div>
+                    <h4 class="reason-head text-capitalize fw-normal ps-4">Review your case documents</h4>
+                    <p class="home-text col-lg-9 my-lg-3 ps-4">Access essential case documents and legal filings in one secure location, ensuring convenience and confidentiality for all clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-4">
+        <div class="row mx-lg-5 px-lg-5">
+            <div class="col-sm-3 col-6">
+                <div>
+                    <p class="count">4025</p>
+                </div>
+                <h4 class="text-capitalize fw-normal reason-head text-center mt-3">Successful Cases</h4>
+                <p class="home-text text-center">A Track Record of Success and Client Satisfaction.</p>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div>
+                    <p class="count">3270</p>
+                </div>
+                <h4 class="text-capitalize fw-normal reason-head text-center mt-3">Trusted Clients</h4>
+                <p class="home-text text-center">Our Clients' Trust is Our Greatest Achievement.</p>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div>
+                    <p class="count">6349</p>
+                </div>
+                <h4 class="text-capitalize fw-normal reason-head text-center mt-3">Case Studies</h4>
+                <p class="home-text text-center">In-Depth Analysis of Our Most Impactful Cases.</p>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div>
+                    <p class="count">851</p>
+                </div>
+                <h4 class="text-capitalize fw-normal reason-head text-center mt-3">Registerd Case</h4>
+                <p class="home-text text-center">From Start to Finish, We’ve Got Your Case Covered.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="news" id="news">
+        <h2 class="heading">Legal News</h2>
+        <div class="container">
+            <div class="Blogs row d-lg-flex justify-content-lg-center my-5">
+                <div class="card blog-content col-lg-3 col-11 d-block px-lg-3">
+                    <img src="./Images/Blog-1.jpg" class="card-img-top" alt="blog">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize fw-normal fs-5 text-left">Understanding Your Legal Rights: A
+                            Guide for Clients Guidance</h5>
+                        <span class="home-text">23 September, 2024</span>
+                        <span class="vr"></span>
+                        <author class="home-text">By: Sirius Black</author>
+                        <hr>
+                        <p class="card-text home-text">Explore the fundamental legal rights every individual should know.
+                            Our
+                            experts break down complex legal principles into simple terms, empowering you to make
+                            informed decisions in your legal matters.</p>
+                        <a href="#" class="btn btn-primary read col-lg-6">Read More</a>
+                    </div>
+                </div>
+                <div class="card blog-content col-lg-3 col-11 d-block px-lg-3">
+                    <img src="./Images/Blog-2.jpg" class="card-img-top" alt="blog">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize fw-normal fs-5 text-left">The Importance of Estate Planning :
+                            Securing Your Future Safely</h5>
+                        <span class="home-text">29 December, 2024</span>
+                        <span class="vr"></span>
+                        <author class="home-text">By: Albus</author>
+                        <hr>
+                        <p class="card-text home-text">Protect your family and assets with a comprehensive estate plan. This
+                            blog
+                            highlights the importance of wills, trusts, and other tools to ensure your legacy is secure.
+                        </p>
+                        <a href="#" class="btn btn-primary read col-lg-6">Read More</a>
+                    </div>
+                </div>
+                <div class="card blog-content col-lg-3 col-11 d-block px-lg-3">
+                    <img src="./Images/blog-3.jpg" class="card-img-top" alt="blog">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize fw-normal fs-5 text-left">Family Law Matters : Divorce, Child
+                            Custody, Alimony and Support</h5>
+                        <span class="home-text">13 February, 2025</span>
+                        <span class="vr"></span>
+                        <author class="home-text">By: Hermione</author>
+                        <hr>
+                        <p class="card-text home-text">Navigating family law issues can be emotionally challenging. This
+                            blog
+                            offers a clear overview of divorce, child custody, and support, helping you prepare for
+                            legal proceedings.</p>
+                        <a href="#" class="btn btn-primary read col-lg-6">Read More</a>
+                    </div>
+                </div>
+                <div class="card blog-content col-lg-3 col-11 d-block px-lg-3">
+                    <img src="./Images/blog-4.jpg" class="card-img-top" alt="blog">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize fw-normal fs-5 text-left">Real Estate Law : Key Considerations
+                            When Buying or Selling Property</h5>
+                        <span class="home-text">19 April, 2025</span>
+                        <span class="vr"></span>
+                        <author class="home-text">By: Ron Weasley</author>
+                        <hr>
+                        <p class="card-text home-text"> Whether you're buying or selling, real estate transactions come with
+                            legal
+                            risks. This blog covers important considerations to ensure a smooth and legally sound deal.
+                        </p>
+                        <a href="#" class="btn btn-primary read">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reviews mw-100" id="reviews">
+        <h2 class="heading text-light">Happy Clients</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-wrap="true" data-bs-ride="carousel"
+            data-bs-interval="4000">
+            <ul class="carousel-indicators">
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></li>
+                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></li>
+            </ul>
+            <!-- <div class="carousel-indicators">
+                <button type="menu" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active mb-5">
+                    <img src="./Images/avater-2.jfif" alt="avtar" class="avatar d-block mx-auto">
+                    <p class="col-lg-6 col-9 review-text">Professional, compassionate, and highly knowledgeable. The team
+                        guided me
+                        through every step of my legal process with care and expertise. I couldn't have asked for
+                        better representation.</p>
+                    <p class="col-lg-6 col-9 review-text">Sarah Whitman - Whitman Tech Solutions</p>
+                </div>
+                <div class="carousel-item mb-5">
+                    <img src="./Images/avtar-1.png" alt="avtar" class="d-block mx-auto">
+                    <p class="col-lg-6 col-9 review-text">Working with this firm was a fantastic experience. They were
+                        thorough,
+                        knowledgeable, and dedicated to ensuring my case was resolved successfully. I felt supported
+                        throughout the entire process.</p>
+                    <p class="col-lg-6 col-9 review-text">James Foster - Foster Construction Group</p>
+                </div>
+                <div class="carousel-item mb-5">
+                    <div class=" avatar mx-auto">
+                        <i class="fa-solid fa-user-tie display-1 text-bg-light"></i>
+                    </div>
+                    <p class="col-lg-6 review-text">I'm incredibly thankful for the legal representation I received. The
+                        team
+                        was professional, detail-oriented, and achieved a favorable outcome for my case. I couldn't
+                        have asked for more.</p>
+                    <p class="col-lg-6 review-text">Robert Williams - Williams & Sons Manufacturing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-class" id="map">
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.90510374113!2d78.24323651345917!3d17.41260863655402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727175079016!5m2!1sen!2sin"
+                width="100%" height="555" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-form col-md-3">
+            <p class="mb-0">We can help you</p>
+            <h1>Contact Us</h1>
+            <form>
+                <div class="d-flex justify-content-lg-around input-group">
+                    <input class="input-val form-control m-4 ms-0 me-2 rounded-0" type="text" placeholder="Your Name"
+                        class="form-control">
+                    <input class="input-val form-control  m-4 me-0 ms-2 rounded-0" type="email" placeholder="Your Email"
+                        class="form-control">
+                </div>
+                <textarea class="form-control rounded-0" placeholder="Message" rows="5" cols="60"
+                    class="p-3"></textarea>
+                <button class="btn map-btn my-4" type="button">submit a request</button>
+                <div class="row flex-row justify-content-lg-around pb-lg-3">
+                    <div class="col-sm-6">
+                        <p class="email"><i class="fa-solid fa-envelope"></i> shiny@gmail.com</p>
+                        <p class="phone"><i class="fa-solid fa-phone"></i> 1234567890</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="time"><i class="fa-solid fa-clock"></i> 17:00</p>
+                        <ul class="handle-icons d-flex flex-lg-row px-0">
+                            <li class="pe-2"><i class="fa-brands fa-twitter"></i></li>
+                            <li class="pe-2"><i class="fa-brands fa-instagram"></i></li>
+                            <li class="pe-2"><i class="fa-brands fa-google-plus-g"></i></li>
+                            <li class="pe-2"><i class="fa-brands fa-youtube"></i></li>
+                            <li class="pe-2"><i class="fa-brands fa-vimeo-v"></i></li>
+                            <li class="pe-2"><i class="fa-brands fa-facebook-f"></i></li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <p><i class="fa-solid fa-map-pin"></i> Gopen Pally, Hyderabad</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="py-5">
+        <div class="law-footer">
+            <img src="./Images/law-footer.png" alt="law">
+        </div>
+        <p class="col-lg-2 col-6 text-center d-lg-block mx-auto text-light fs-6">© 2017 All Rights Reserved theLaw Firm
+            Contact Shiny Law Firm</p>
+    </footer>
+
+    <script>
+        function displaySearch() {
+            document.getElementsByClassName('search-box')[0].style.display = "block";
+            document.getElementsByClassName('fa-magnifying-glass')[0].style.display = 'none';
+        }
+        function removesearch() {
+            document.getElementsByClassName('search-box')[0].style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
